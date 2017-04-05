@@ -1,0 +1,29 @@
+<div id="bookListWrapper" class="flex col-size12">
+	<div class="flex col-size12">
+		<ul class="list-unstyled">
+			<li ng-repeat="book in books | filter:searchStr" class="book">
+			<!--  style="background: white url(imgs/{{book.imgUrl}}) no-repeat" -->
+				<div class="leftblock flex paditem book-details left">
+					<span><img class="images" src={{book.imgUrl}}>
+					<button class="btn btn-info " ng-click="addToTimeTable(book)">Add to list</button>
+					</span>
+				</div>
+				<h3 class="flex">{{book.name}}</h3>
+				<div class="book-details flex col-size9">
+					<ul class="list-unstyled list-inline gutvert">
+						<li>Price: {{book.price | currency:'$.'}}</li>
+						<li>Rating: {{book.rating}}</li>
+						<li>Format: {{book.format}}</li>
+						<li>Author: {{book.author}}</li>
+						<li>Publisher: {{book.publisher}}</li>
+						<li>Released: {{book.releaseDate}}</li>
+					</ul>
+				</div>
+				<div class="book-details flex col-size10">
+					<p>{{book.details}}</p>
+					<!-- <button class="btn btn-info pull-right" ng-click="addToTimeTable(book)">Add to Time Table</button> -->
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>

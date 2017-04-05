@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Mini Library Application</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="custom.css">
+	<link href="https://fonts.googleapis.com/css?family=Abel|Slabo+27px|Lobster+Two" rel="stylesheet">
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+	<script src="app.js"></script>
+
+
+</head>
+
+<body>
+<!-- header view -->
+<div id="headerWrapper" class=" flex clear col-size12" ng-controller = "HeaderCtrl">
+
+	<!-- <div class="col-size3 left headcss"><span class="right"><img class="imageslogo" src={{appDetails.imgUrl}}></span></div> -->
+	<div class="col-size12 headmid">
+		<span class="logo"><h1>{{appDetails.title}}</h1></span>
+		<span class="tagline"><h3>{{appDetails.tagline}}</h3></span>
+	</div>
+</div>
+<div class="nav-row gutvert col-size12 flex clear">	
+	<div class="nav-wrapper col-size3">
+		<ul class="nav gutleft nav-pills">
+			<li class="active"><a href="#/library">Library Books</a></li>
+			<li><a href="#timetable">Time Table</a></li>
+		</ul>
+	</div>
+	<form role='form' class="col-size2">
+		<div class="form-group">
+			<input type="text" name="search" placeholder="search..." class="form-control" ng-model = "searchStr">
+		</div>
+	</form>
+</div>
+
+
+<div ng-view></div>
+
+</body>
+</html>

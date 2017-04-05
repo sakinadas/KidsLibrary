@@ -1,0 +1,52 @@
+<!-- <div id="bookListWrapper">
+<p>Please click on buy to add book to Kart</p>
+	<div>
+		<ul class="list-unstyled">
+			<li ng-repeat="book in ttable" class="book" style="background: white url(imgs/{{book.imgUrl}}) no-repeat">
+				<div class="book-details clearfix">
+					<span><img class="images" src={{book.imgUrl}}></span>
+					<h3>{{book.name}}</h3>
+					<p>{{book.price | currency: '$ '}}</p>
+					<ul class="list-unstyled list-inline">
+						<li>Rating: {{book.rating}}</li>
+						<li>Binding: {{book.binding}}</li>
+						<li>Publisher: {{book.publisher}}</li>
+						<li>Released: {{book.releaseDate}}</li>
+					</ul>
+					<p>{{book.details}}</p>
+					<button class="btn btn-info pull-right" ng-click="checkout(book)">Check Out</button>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div> -->
+
+<div id="bookListWrapper" class="flex col-size12">
+	<div class="flex col-size12">
+		<ul class="list-unstyled">
+			<li ng-repeat="book in ttable" class="book">
+			<!--  style="background: white url(imgs/{{book.imgUrl}}) no-repeat" -->
+				<div class="leftblock flex paditem book-details left">
+					<span><img class="images" src={{book.imgUrl}}>
+					<button class="btn btn-info " ng-click="addToTimeTable(book)">Check Out</button>
+					</span>
+				</div>
+				<h3 class="flex">{{book.name}}</h3>
+				<div class="book-details flex col-size9">
+					<ul class="list-unstyled list-inline gutvert">
+						<li>Price: {{book.price | currency:'$.'}}</li>
+						<li>Rating: {{book.rating}}</li>
+						<li>Format: {{book.format}}</li>
+						<li>Author: {{book.author}}</li>
+						<li>Publisher: {{book.publisher}}</li>
+						<li>Released: {{book.releaseDate}}</li>
+					</ul>
+				</div>
+				<div class="book-details flex col-size10">
+					<p>{{book.details}}</p>
+					<!-- <button class="btn btn-info pull-right" ng-click="addToTimeTable(book)">Add to Time Table</button> -->
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
